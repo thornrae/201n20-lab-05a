@@ -37,6 +37,7 @@ function multiply(a, b) { //eslint-disable-line
   return [product, str];
 }
 
+
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);//eslint-disable-line
 
@@ -54,12 +55,26 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
 
+function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var sum1 = sum(a,b);
+  var sum2 = sum(c, sum1[0]);
+
+  var product1 = multiply(a,b);
+  var product2 = multiply(c, product1[0]);
+
+  var sumString = `${a} and ${b} and ${c} sum to ${sum2[0]}.`;
+  // console.log(sumString);
+
+  var productString = `The product of ${a} and ${b} and ${c} is ${product2[0]}.`;
+  // console.log(productString);
+  console.log(sum2[0], product2[0], sumString, productString);
+  return [sum2[0], product2[0], sumString, productString];
 }
 
+
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5); //eslint-disable-line
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
